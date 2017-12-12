@@ -1,5 +1,6 @@
 package com.gree.ssm.utils;
 
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
@@ -65,7 +66,11 @@ public class HttpClientUtil {
 
         //执行请求操作，并拿到结果（同步阻塞）
         CloseableHttpResponse response = client.execute(httpPost);
-        System.out.println(response.getAllHeaders().toString());
+        Header[]  headers = response.getAllHeaders();
+        for(Header header : headers){
+            System.out.println("name:"+header.getName()+"  value:"+header.getValue());
+        }
+
         //获取结果实体
         HttpEntity entity = response.getEntity();
         if (entity != null) {

@@ -5,7 +5,7 @@
   <artifactId>AngularJSblog</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>AngularJSblogMaven</name>
+  <name>apiHttpClientMaven</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -25,6 +25,14 @@
     <slf4j.version>1.7.21</slf4j.version>
     <taglibs.version>1.1.2</taglibs.version>
     <c3p0.version>0.9.1.2</c3p0.version>
+
+    <!-- 文件拷贝时的编码 -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- 编译时的编码 -->
+    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    <httpclient.version>4.4.1</httpclient.version>
+    <httpasyncclient.version>4.1</httpasyncclient.version>
 
   </properties>
 
@@ -153,6 +161,8 @@
     </dependency>
 
 
+
+
     <!-- Map工具类 -->
     <dependency>
       <groupId>commons-collections</groupId>
@@ -160,9 +170,23 @@
       <version>${commons-collection}</version>
     </dependency>
 
+    <!--HttpClient-->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${httpclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+     <!--HttpClient-->
+
 
   </dependencies>
   <build>
-    <finalName>AngularJSblog</finalName>
+    <finalName>apiHttpClient</finalName>
   </build>
 </project>

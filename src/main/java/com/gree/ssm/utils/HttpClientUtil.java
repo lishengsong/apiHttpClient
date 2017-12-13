@@ -28,6 +28,9 @@ import java.util.Map;
 
 
 public class HttpClientUtil {
+
+    public static String JSSESSIONID = "";
+
     /**
      * 模拟请求
      *
@@ -69,6 +72,9 @@ public class HttpClientUtil {
         Header[]  headers = response.getAllHeaders();
         for(Header header : headers){
             System.out.println("name:"+header.getName()+"  value:"+header.getValue());
+            if("Set-Cookie".equals(header.getName()) && header.getValue().startsWith("JSESSIONID=")){
+               JSSESSIONID = header.getValue();
+            }
         }
 
         //获取结果实体

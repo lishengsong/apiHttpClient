@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gree</groupId>
-  <artifactId>AngularJSblog</artifactId>
+  <artifactId>apiHttpClient</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>apiHttpClientMaven</name>
@@ -33,6 +33,9 @@
     <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     <httpclient.version>4.4.1</httpclient.version>
     <httpasyncclient.version>4.1</httpasyncclient.version>
+    <fastjson.version>1.2.24</fastjson.version>
+
+    <cors-filter.version>2.5</cors-filter.version>
 
   </properties>
 
@@ -178,11 +181,40 @@
     </dependency>
 
     <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
+      <version>${httpclient.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpasyncclient</artifactId>
+      <version>${httpasyncclient.version}</version>
+    </dependency>
+    <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
-     <!--HttpClient-->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.10</version>
+    </dependency>
+
+      <!--HttpClient-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+    </dependency>
+
+    <!--Access-Control-Allow-Credentials-->
+    <dependency>
+      <groupId>com.thetransactioncompany</groupId>
+      <artifactId>cors-filter</artifactId>
+      <version>${cors-filter.version}</version>
+    </dependency>
+    <!--Access-Control-Allow-Credentials-->
 
 
   </dependencies>
